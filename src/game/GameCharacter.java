@@ -1,10 +1,13 @@
 package game;
 
+import java.util.ArrayList;
+
 public class GameCharacter {
 	private int[] stats = new int[10];
 	private int mHealth = 20;
 	private int cHealth = 20;
-	private Item[] inventory = new Item[40];
+	//private Item[] inventory = new Item[40];
+	private ArrayList<Item> inventory = new ArrayList<Item>(40);
 	private int location;
 	private boolean isPlayer;
 	private String name =new String();
@@ -15,13 +18,29 @@ public class GameCharacter {
 		isPlayer=pc;
 	}
 	
+	public void pickUp(Item item) {
+		inventory.add(item);
+	}
+	
+	public void drop(Item item){
+		
+	if (item.isKey() == false) {
+		int indexOfToBeRemoved = inventory.indexOf(item);
+		inventory.remove(indexOfToBeRemoved);
+		}
+	else {
+		System.out.println("It seems important, maybe you should hold on to it?");
+		}
+	
+	}
+	
 	///Getters and Setters///
 	
 	public int[] getStats(){
 		return stats;
 	}
 	
-	public Item[] getInventory(){
+	public ArrayList<Item> getInventory(){
 		return inventory;
 	}
 	

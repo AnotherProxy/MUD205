@@ -1,5 +1,6 @@
 package game;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -18,12 +19,24 @@ public class Main {
 		
 		
 		
+		ArrayList<Item> inventory = new ArrayList<Item>(40);
+		
+		Item tango = new Item("Tango", "Ballroom dance");
+		Item bango = new Item("bango", "Ballsroom pants");
+		Item im = new Item("Meeseeks", "Howdy");
+		Item alex = new Item("RIP", "LOL");
+		
+		inventory.add(alex);
+		inventory.add(bango);
+		inventory.add(im);
+		inventory.add(tango);
+		
+		int indexOfToBeRemoved = inventory.indexOf(tango);
+		inventory.remove(indexOfToBeRemoved);
+		
+		System.out.println(inventory);
 		
 		
-		
-		
-		
-
 	}
 
 }
