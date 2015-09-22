@@ -10,6 +10,13 @@ public class GameCharacter {
 	private String name =new String();
 	private GameController controller = new GameController();
 	
+	public GameCharacter(String n, boolean pc){
+		name=n;
+		isPlayer=pc;
+	}
+	
+	///Getters and Setters///
+	
 	public int[] getStats(){
 		return stats;
 	}
@@ -36,11 +43,6 @@ public class GameCharacter {
 	
 	public void setController(GameController c){
 		controller = c;
-	}
-	
-	public GameCharacter(String n, boolean pc){
-		name=n;
-		isPlayer=pc;
 	}
 	
 	public void setLocation(int i){

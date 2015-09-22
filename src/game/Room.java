@@ -10,6 +10,12 @@ public class Room {
 	private String wWall = new String("");
 	private Room[] exits = new Room[4];  //Create Related Functions Setters And Getters
 	
+	public boolean isExit(int d){
+		if(exits[d] != null) return true;
+		else return false;
+	}
+	
+	///Getters and Setters///
 	
 	public int getID(){
 		return id;
@@ -75,13 +81,6 @@ public class Room {
 		wWall=x;
 	}
 	
-	public boolean isExit(int d){
-		if(exits[d] != null) return true;
-		else return false;
-	}
-	
-	public Room getExit(int i){
-		return exits[i];
-	}
+
 
 }
