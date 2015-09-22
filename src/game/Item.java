@@ -1,16 +1,21 @@
 package game;
 
+
 public class Item {
-	
 	private int location;
-	private int id;
 	private String name;
 	private String description;
+	private boolean isKey;
 
 	///Getters and Setters///
 	
 	public int getLocation() {
 		return location;
+	}
+	
+	public Item(String name, String description){
+		this.name = name;
+		this.description = description;
 	}
 
 	public void setLocation(int location) {
@@ -33,13 +38,16 @@ public class Item {
 		this.name = name;
 	}
 
-	public int getId() {
-		return id;
+	public String toString() {
+		return this.name;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public boolean isKey() {
+		return isKey;
 	}
-	
+
+	public void setKey(boolean isKey) {
+		this.isKey = isKey;
+	}
 
 }
