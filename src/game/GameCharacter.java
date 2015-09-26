@@ -68,4 +68,7 @@ public class GameCharacter {
 		location=i;
 	}
 
+	public String toString() {
+		return name;
+	}
 }

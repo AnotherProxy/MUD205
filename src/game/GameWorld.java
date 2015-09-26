@@ -5,9 +5,7 @@ public class GameWorld {
 	private GameCharacter[] characterList = new GameCharacter[3];
 	private Item[] itemList = new Item[100];
 	
-	public void Terminate(){
-		System.exit(0);
-	}
+	
 	
 	
 	///Getters and Setters///
