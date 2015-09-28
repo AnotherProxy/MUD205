@@ -38,16 +38,16 @@ public class Item {
 		this.name = name;
 	}
 
-	public String toString() {
-		return this.name;
-	}
-
 	public boolean isKey() {
 		return isKey;
 	}
 
 	public void setKey(boolean isKey) {
 		this.isKey = isKey;
+	}
+	
+	public String toString() {
+		return this.name;
 	}
 
 }

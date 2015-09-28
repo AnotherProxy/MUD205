@@ -3,6 +3,7 @@ package game;
 public class Room {
 	private int id;
 	private boolean visited;
+	private String name;
 	private String description = new String("");
 	private String nWall = new String("");
 	private String sWall = new String("");
@@ -81,6 +82,8 @@ public class Room {
 		wWall=x;
 	}
 	
-
+	public String toString(){ 
+		return "You are in" + this.name;
+	}
 
 }
