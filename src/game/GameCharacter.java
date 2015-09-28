@@ -4,18 +4,19 @@ import java.util.ArrayList;
 
 public class GameCharacter {
 	private int[] stats = new int[10];
-	private int mHealth = 20;
-	private int cHealth = 20;
+	private int mHealth = 20; //max health
+	private int cHealth = 20;//current health
 	//private Item[] inventory = new Item[40];
-	private ArrayList<Item> inventory = new ArrayList<Item>(40);
-	private int location;
-	private boolean isPlayer;
-	private String name =new String();
+	private ArrayList<Item> inventory = new ArrayList<Item>(40); 
+	private int xCoord; //location data
+	private int yCoord; //location data
+	private boolean isPlayer; //is player
+	private String name;
 	private GameController controller = new GameController();
 	
 	public GameCharacter(String n, boolean pc){
 		name=n;
-		isPlayer=pc;
+		setPlayer(pc);
 	}
 	
 	public void pickUp(Item item) {
@@ -44,8 +45,8 @@ public class GameCharacter {
 		return inventory;
 	}
 	
-	public int getLocation(){
-		return location;
+	public String getLocation(){
+		return ""+xCoord+","+yCoord; //
 	}
 	
 	public GameController getController(){
@@ -64,11 +65,37 @@ public class GameCharacter {
 		controller = c;
 	}
 	
-	public void setLocation(int i){
-		location=i;
+	public void setLocation(int x, int y){
+		xCoord = x;
+		yCoord = y;
+		
 	}
 
 	public String toString() {
 		return name;
+	}
+
+	public boolean isPlayer() {
+		return isPlayer;
+	}
+
+	public void setPlayer(boolean isPlayer) {
+		this.isPlayer = isPlayer;
+	}
+
+	public int getmHealth() {
+		return mHealth;
+	}
+
+	public void setmHealth(int mHealth) {
+		this.mHealth = mHealth;
+	}
+
+	public int getcHealth() {
+		return cHealth;
+	}
+
+	public void setcHealth(int cHealth) {
+		this.cHealth = cHealth;
 	}
 }

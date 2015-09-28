@@ -11,20 +11,8 @@ public class GameEventHandler {
 		System.out.println(r2.getDescription());
 	}
 	
-	public void ExamiineN(Room r){
-		System.out.println(r.getNWall());
-	}
-	
-	public void ExamiineS(Room r){
-		System.out.println(r.getSWall());
-	}
-	
-	public void ExamiineE(Room r){
-		System.out.println(r.getEWall());
-	}
-	
-	public void ExamiineW(Room r){
-		System.out.println(r.getWWall());
+	public void goNorth(GameCharacter c, GameWorld w){
+		c.setLocation());
 	}
 	
 	public void Exit(GameCharacter c, Room r, int d){
