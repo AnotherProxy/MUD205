@@ -1,7 +1,8 @@
 package game;
 
 public class GameWorld {
-	private Room[] map = new Room[5];
+	Room[][] map = new Room[5][5];
+
 	private GameCharacter[] characterList = new GameCharacter[3];
 	private Item[] itemList = new Item[100];
 	
@@ -10,7 +11,7 @@ public class GameWorld {
 	
 	///Getters and Setters///
 	
-	public Room[] getMap() {
+	public Room[][] getMap() {
 		return map;
 	}
 	

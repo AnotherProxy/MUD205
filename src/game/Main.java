@@ -15,12 +15,13 @@ public class Main {
 		System.out.println("What is your name?");
 		String n = new String(input.next());
 		GameCharacter player = new GameCharacter(n, true);
+		player.setLocation(0,0);
 		System.out.println("Hello, " + player.getName());
 		
 		
 		
 		while (true) {
-			player.getController().parseInput(input.nextLine(), tom);
+			player.getController().parseInput(input.nextLine(), tom, player);
 			//System.out.println(input.next());
 		}
 		
