@@ -6,19 +6,20 @@ public class GameCharacter {
 	private int[] stats = new int[10];
 	private int mHealth = 20; //max health
 	private int cHealth = 20;//current health
-	//private Item[] inventory = new Item[40];
-	private ArrayList<Item> inventory = new ArrayList<Item>(40); 
+	//private ArrayList<Item> inventory = new ArrayList<Item>(40); 
 	private int xCoord; //location data
 	private int yCoord; //location data
+	private Room location;
 	private boolean isPlayer; //is player
 	private String name;
+	private Item[] inventory = new Item[16];
 	private GameController controller = new GameController();
 	
 	public GameCharacter(String n, boolean pc){
 		name=n;
 		setPlayer(pc);
 	}
-	
+	/*
 	public void pickUp(Item item) {
 		inventory.add(item);
 	}
@@ -34,21 +35,47 @@ public class GameCharacter {
 		}
 	
 	}
+	*/
+	
+	///NOTE THIS DOES NOT CHECK IF THE ROOMS LOOT TABLE IS FULL
+	public void pickUp(Item i){
+		for (int j = 0; j < inventory.length; j++){
+			if (inventory[j] == null){
+				inventory[j] = i;
+				break;
+			}
+		}
+	}
+	
+	public void putDown(Item i){
+		for (int j = 0; j < inventory.length; j++){
+			if (i == inventory[j]){
+				inventory[j] = null;
+				break;
+			}
+		}
+	}
+	
 	
 	///Getters and Setters///
+	
+	public Room getLocation(){
+		return location;
+	}
 	
 	public int[] getStats(){
 		return stats;
 	}
 	
-	public ArrayList<Item> getInventory(){
+	public Item[] getInventory(){
 		return inventory;
 	}
 	
-	public String getLocation(){
+	/*
+	 public String getLocation(){
 		return ""+xCoord+","+yCoord; //
 	}
-	
+	*/
 	public GameController getController(){
 		return controller;
 	}
@@ -65,11 +92,17 @@ public class GameCharacter {
 		controller = c;
 	}
 	
+	public void setLocation(Room r){
+		location = r;
+	}
+	
+	/*
 	public void setLocation(int x, int y){
 		xCoord = x;
 		yCoord = y;
 		
 	}
+	*/
 
 	public String toString() {
 		return name;

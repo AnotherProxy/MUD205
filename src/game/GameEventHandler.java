@@ -2,22 +2,74 @@ package game;
 
 public class GameEventHandler {
 	
-	public void TerminateWorld(){
+	public void terminateWorld(){
 		System.exit(0);
 	}
 	
-	public void ChangeRoom(GameCharacter c, Room r1, Room r2){
-		c.setLocation(r2.getID());
-		System.out.println(r2.getDescription());
+	//ITEM MANAGEMENT
+	
+	public void pickUp(GameCharacter c, Item i){
+		if (c.getLocation().hasItem(i)){
+			c.pickUp(i);
+			c.getLocation().removeItem(i);
+		}
 	}
 	
-	public void goNorth(GameCharacter c, GameWorld w){
-		c.setLocation());
+	public void putDown(GameCharacter c, Item i){
+		if (c.getLocation().hasItem(i)){
+			c.putDown(i);
+			c.getLocation().removeItem(i);
+		}
 	}
 	
-	public void Exit(GameCharacter c, Room r, int d){
-		if(r.isExit(d)) ChangeRoom(c, r,r.getExit(d));
-		else System.out.println("You can not go that way.");
+	///MOVEMENT
+	public void goNorth(GameCharacter c){
+		if (c.getLocation().isExit(0)){
+			c.setLocation(c.getLocation().getExit(0));
+			c.getLocation().setVisited(true);
+			System.out.println(c.getLocation().getDescription());
+		}
+		else {
+			System.out.println("You can not go that way.");
+			System.out.println(c.getLocation().getDescription());
+		}
 	}
+	
+	public void goEast(GameCharacter c){
+		if (c.getLocation().isExit(1)){
+			c.setLocation(c.getLocation().getExit(1));
+			c.getLocation().setVisited(true);
+			System.out.println(c.getLocation().getDescription());
+		}
+		else {
+			System.out.println("You can not go that way.");
+			System.out.println(c.getLocation().getDescription());
+		}
+	}
+	
+	public void goSouth(GameCharacter c){
+		if (c.getLocation().isExit(2)){
+			c.setLocation(c.getLocation().getExit(2));
+			c.getLocation().setVisited(true);
+			System.out.println(c.getLocation().getDescription());
+		}
+		else {
+			System.out.println("You can not go that way.");
+			System.out.println(c.getLocation().getDescription());
+		}
+	}
+	
+	public void goWest(GameCharacter c){
+		if (c.getLocation().isExit(3)){
+			c.setLocation(c.getLocation().getExit(3));
+			c.getLocation().setVisited(true);
+			System.out.println(c.getLocation().getDescription());
+		}
+		else {
+			System.out.println("You can not go that way.");
+			System.out.println(c.getLocation().getDescription());
+		}
+	}
+	///MOVEMENT
 
 }
