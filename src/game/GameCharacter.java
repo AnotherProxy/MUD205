@@ -6,13 +6,13 @@ public class GameCharacter {
 	private int[] stats = new int[10];
 	private int mHealth = 20; //max health
 	private int cHealth = 20;//current health
-	//private ArrayList<Item> inventory = new ArrayList<Item>(40); 
+	private ArrayList<Item> inventory = new ArrayList<Item>(40); 
 	private int xCoord; //location data
 	private int yCoord; //location data
 	private Room location;
 	private boolean isPlayer; //is player
 	private String name;
-	private Item[] inventory = new Item[16];
+	//private Item[] inventory = new Item[16];
 	private GameController controller = new GameController();
 	
 	public GameCharacter(String n, boolean pc){
@@ -39,21 +39,13 @@ public class GameCharacter {
 	
 	///NOTE THIS DOES NOT CHECK IF THE ROOMS LOOT TABLE IS FULL
 	public void pickUp(Item i){
-		for (int j = 0; j < inventory.length; j++){
-			if (inventory[j] == null){
-				inventory[j] = i;
-				break;
-			}
-		}
+		
+		inventory.add(i);
 	}
 	
 	public void putDown(Item i){
-		for (int j = 0; j < inventory.length; j++){
-			if (i == inventory[j]){
-				inventory[j] = null;
-				break;
-			}
-		}
+		int locationOfI = inventory.indexOf(i);
+		inventory.remove(locationOfI);
 	}
 	
 	
@@ -67,7 +59,7 @@ public class GameCharacter {
 		return stats;
 	}
 	
-	public Item[] getInventory(){
+	public ArrayList<Item> getInventory(){
 		return inventory;
 	}
 	

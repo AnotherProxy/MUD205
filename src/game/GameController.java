@@ -11,7 +11,12 @@ public class GameController {
 		else if (input.toLowerCase().equals("go west")) e.goWest(c);
 		else if (input.toLowerCase().equals("pick up carrot"));
 		else if (input.toLowerCase().equals("pick up cheese"));
-		else if (input.toLowerCase().equals("pick up apple"));
+		else if (input.toLowerCase().equals("grab apple")){
+			e.pickUp(c, c.getLocation().getItem("apple"));
+			System.out.println("Woo!");
+			System.out.println(c.getInventory());
+		}
+		else if (input.toLowerCase().equals("look")) System.out.println(c.getLocation().getDescription());
 		else System.out.println("That is not a valid command.");
 		
 	}

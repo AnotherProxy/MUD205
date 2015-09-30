@@ -3,12 +3,14 @@ package game;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 public class Main {
 	
 	private static GameWorld world = new GameWorld();
 	private static GameEventHandler tom = new GameEventHandler();
-	private static Scanner input = new Scanner(System.in);
-
+	private static Scanner input = new Scanner(System.in);	
+	
 	public static void main(String[] args) {
 		
 		world.generateTestMap();

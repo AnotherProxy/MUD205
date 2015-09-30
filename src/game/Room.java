@@ -75,6 +75,16 @@ public class Room {
 		return false;
 	}
 	
+	public Item getItem(String s){
+		for(int i = 0; i < loot.length; i++){
+			if (s.equals(loot[i].getName())){
+				return loot[i];
+			}
+		}
+		System.out.println("This item is not in the room.");
+		return null;
+	}
+	
 	public void addItem(Item i){
 		for (int j = 0; j < loot.length; j++){
 			if (loot[j] == null){
