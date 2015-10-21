@@ -16,8 +16,8 @@ public class Main {
 		world.generateTestMap();
 		System.out.println("Welcome to Nico's mom's house!");
 		System.out.println("What is your name?");
-		String n = new String(input.next());
-		GameCharacter player = new GameCharacter(n, true);
+		//String n = new String(input.next());
+		GameCharacter player = new GameCharacter("Kiki", true);
 		player.setLocation(world.getMap()[0]);
 		System.out.println("Hello, " + player.getName());
 		System.out.println(player.getLocation().getDescription());

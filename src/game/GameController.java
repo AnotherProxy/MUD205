@@ -1,23 +1,31 @@
 package game;
 
+import java.util.Scanner;
+
 public class GameController {
 	
-	public void parseInput(String input, GameEventHandler e, GameCharacter c){
+	String firstWord;
+	String secondWord;
 	
-		if (input.toLowerCase().equals("exit")) e.terminateWorld();
-		else if (input.toLowerCase().equals("go north")) e.goNorth(c);
-		else if (input.toLowerCase().equals("go south")) e.goSouth(c);
-		else if (input.toLowerCase().equals("go east")) e.goEast(c);
-		else if (input.toLowerCase().equals("go west")) e.goWest(c);
-		else if (input.toLowerCase().equals("pick up carrot"));
-		else if (input.toLowerCase().equals("pick up cheese"));
-		else if (input.toLowerCase().equals("grab apple")){
-			e.pickUp(c, c.getLocation().getItem("apple"));
-			System.out.println("Woo!");
-			System.out.println(c.getInventory());
+	public void parseInput(String input, GameEventHandler e, GameCharacter c){
+
+		Scanner sC = new Scanner(input);
+		
+		firstWord = sC.next();
+		
+		if (firstWord.toLowerCase().equals("exit")) e.terminateWorld();
+		
+		else if (firstWord.toLowerCase().equals("go")) {
+			secondWord = sC.next();
+			if (secondWord.toLowerCase().equals("north")) e.goNorth(c);
+			else if (secondWord.toLowerCase().equals("south")) e.goSouth(c);
+			else if (secondWord.toLowerCase().equals("east")) e.goEast(c);
+			else if (secondWord.toLowerCase().equals("west")) e.goWest(c);
 		}
-		else if (input.toLowerCase().equals("look")) System.out.println(c.getLocation().getDescription());
-		else System.out.println("That is not a valid command.");
+		
+		else {System.out.println("SPEAK UP SONNY I CANT HEAR YOU");}
+		
+		
 		
 	}
 	
