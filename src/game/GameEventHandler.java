@@ -23,51 +23,51 @@ public class GameEventHandler {
 	}
 	
 	///MOVEMENT
-	public void goNorth(GameCharacter c){
+	public String goNorth(GameCharacter c){
 		if (c.getLocation().isExit(0)){
 			c.setLocation(c.getLocation().getExit(0));
 			c.getLocation().setVisited(true);
-			System.out.println(c.getLocation().getDescription());
+			return(c.getLocation().getDescription());
 		}
 		else {
-			System.out.println("You can not go that way.");
-			System.out.println(c.getLocation().getDescription());
+			return("You can not go that way.");
+			//System.out.println(c.getLocation().getDescription());
 		}
 	}
 	
-	public void goEast(GameCharacter c){
+	public String goEast(GameCharacter c){
 		if (c.getLocation().isExit(1)){
 			c.setLocation(c.getLocation().getExit(1));
 			c.getLocation().setVisited(true);
-			System.out.println(c.getLocation().getDescription());
+			return (c.getLocation().getDescription());
 		}
 		else {
-			System.out.println("You can not go that way.");
-			System.out.println(c.getLocation().getDescription());
+			return ("You can not go that way.");
+			//System.out.println(c.getLocation().getDescription());
 		}
 	}
 	
-	public void goSouth(GameCharacter c){
+	public String goSouth(GameCharacter c){
 		if (c.getLocation().isExit(2)){
 			c.setLocation(c.getLocation().getExit(2));
 			c.getLocation().setVisited(true);
-			System.out.println(c.getLocation().getDescription());
+			return (c.getLocation().getDescription());
 		}
 		else {
-			System.out.println("You can not go that way.");
-			System.out.println(c.getLocation().getDescription());
+			return ("You can not go that way.");
+			//System.out.println(c.getLocation().getDescription());
 		}
 	}
 	
-	public void goWest(GameCharacter c){
+	public String goWest(GameCharacter c){
 		if (c.getLocation().isExit(3)){
 			c.setLocation(c.getLocation().getExit(3));
 			c.getLocation().setVisited(true);
-			System.out.println(c.getLocation().getDescription());
+			return(c.getLocation().getDescription());
 		}
 		else {
-			System.out.println("You can not go that way.");
-			System.out.println(c.getLocation().getDescription());
+			return("You can not go that way.");
+			//System.out.println(c.getLocation().getDescription());
 		}
 	}
 	///MOVEMENT

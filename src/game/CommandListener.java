@@ -20,7 +20,7 @@ public class CommandListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JTextField source = (JTextField) e.getSource();
 		String command = source.getText();
-		System.out.println(command);
+		out.append(command);
 		source.setText("");
 		
 	}
