@@ -3,13 +3,18 @@ package game;
 import java.util.ArrayList;
 
 public class GameCharacter {
-	private int[] stats = new int[10];
+	
+	private Equipment armor;
+	private Equipment weapon;
+	private Equipment amulet;
+	
 	private int mHealth = 20; //max health
 	private int cHealth = 20;//current health
+
 	private ArrayList<Item> inventory; 
-	private int xCoord; //location data
-	private int yCoord; //location data
+
 	private Room location;
+	
 	private boolean isPlayer; //is player
 	private String name;
 	//private Item[] inventory = new Item[16];
@@ -19,33 +24,23 @@ public class GameCharacter {
 		name=n;
 		setPlayer(pc);
 	}
-	/*
-	public void pickUp(Item item) {
-		inventory.add(item);
-	}
+
 	
-	public void drop(Item item){
-		
-	if (item.isKey() == false) {
-		int indexOfToBeRemoved = inventory.indexOf(item);
-		inventory.remove(indexOfToBeRemoved);
-		}
-	else {
-		System.out.println("It seems important, maybe you should hold on to it?");
-		}
-	
-	}
-	*/
-	
-	///NOTE THIS DOES NOT CHECK IF THE ROOMS LOOT TABLE IS FULL
 	public void pickUp(Item i){
-		
-		inventory.add(i);
+		if (this.getLocation().hasItem(i))
+		{
+			inventory.add(i);
+			this.getLocation().removeItem(i);
+		}
+		else
+			System.out.println("...I don't see any");
 	}
 	
 	public void putDown(Item i){
-		int locationOfI = inventory.indexOf(i);
-		inventory.remove(locationOfI);
+		if (i.isKey())
+			System.out.println("Maybe you should hold onto that");
+		else
+			inventory.remove(i);
 	}
 	
 	
@@ -55,29 +50,16 @@ public class GameCharacter {
 		return location;
 	}
 	
-	public int[] getStats(){
-		return stats;
-	}
-	
 	public ArrayList<Item> getInventory(){
 		return inventory;
 	}
 	
-	/*
-	 public String getLocation(){
-		return ""+xCoord+","+yCoord; //
-	}
-	*/
 	public GameController getController(){
 		return controller;
 	}
 	
 	public String getName(){
 		return name;
-	}
-	
-	public void setStat(int index, int value){
-		stats[index] = value;
 	}
 	
 	public void setController(GameController c){
@@ -88,13 +70,6 @@ public class GameCharacter {
 		location = r;
 	}
 	
-	/*
-	public void setLocation(int x, int y){
-		xCoord = x;
-		yCoord = y;
-		
-	}
-	*/
 
 	public String toString() {
 		return name;
