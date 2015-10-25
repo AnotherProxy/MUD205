@@ -1,9 +1,11 @@
 package game;
 
+import java.util.ArrayList;
+
 public class Room {
 	private int id;
 	private boolean visited;
-	private Item[] loot = new Item[5];
+	private ArrayList<Item> loot;
 	private String name;
 	private String description = new String("");
 	private Room[] exits = new Room[4];  //Create Related Functions Setters And Getters
@@ -67,41 +69,21 @@ public class Room {
 	}
 	
 	public boolean hasItem(Item i){
-		for (int j = 0; j < loot.length; j++){
-			if (i == loot[j]){
-				return true;
-			}
-		}
-		return false;
+		return loot.contains(i);
 	}
 	
 	public Item getItem(String s){
-		for(int i = 0; i < loot.length; i++){
-			if (s.equals(loot[i].getName())){
-				return loot[i];
-			}
-		}
+		
 		System.out.println("This item is not in the room.");
 		return null;
 	}
 	
 	public void addItem(Item i){
-		for (int j = 0; j < loot.length; j++){
-			if (loot[j] == null){
-				loot[j] = i;
-				break;
-			}
-		}
-		System.out.println("You can not drop that, there is no more space.");
+		loot.add(i);
 	}
 	
 	public void removeItem(Item i){
-		for (int j = 0; j < loot.length; j++){
-			if (i == loot[j]){
-				loot[j] = null;
-				break;
-			}
-		}
+		loot.remove(i);
 	}
 
 }

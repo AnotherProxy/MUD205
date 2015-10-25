@@ -6,7 +6,7 @@ public class GameCharacter {
 	private int[] stats = new int[10];
 	private int mHealth = 20; //max health
 	private int cHealth = 20;//current health
-	private ArrayList<Item> inventory = new ArrayList<Item>(40); 
+	private ArrayList<Item> inventory; 
 	private int xCoord; //location data
 	private int yCoord; //location data
 	private Room location;
