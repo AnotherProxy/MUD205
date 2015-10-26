@@ -8,7 +8,7 @@ public class Equipment extends Item {
 	private int acMod;
 	private String equipType;
 	
-	public Equipment(String n, String d, int attribute1, int attribute2, String type) {
+	public Equipment(String n, String d, int attribute1,  String type) {
 		super(n, d);
 		if (type.toLowerCase() == "armor"){
 			this.setEquipType("armor");

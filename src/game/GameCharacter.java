@@ -121,16 +121,6 @@ public class GameCharacter {
 	}
 
 
-	public int getStrength() {
-		return strength;
-	}
-
-
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
-
-
 	public int getArmorClass() {
 		return armorClass;
 	}

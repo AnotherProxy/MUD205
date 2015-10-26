@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Room {
 	private int id;
 	private boolean visited;
-	private ArrayList<Item> loot;
+	private ArrayList<Item> loot = new ArrayList<Item>(10);
 	private String name;
 	private String description = new String("");
 	private Room[] exits = new Room[4];  //Create Related Functions Setters And Getters

@@ -1,7 +1,7 @@
 package game;
 
 public class GameWorld {
-	private static Room[] map = new Room[5];
+	private Room[] map = new Room[5];
 
 	private GameCharacter[] characterList = new GameCharacter[3];
 	private Item[] itemList = new Item[100];
@@ -25,10 +25,9 @@ public class GameWorld {
 
 	public void initializeWorld(){
 		
-		
 	}
 	
-	public static void generateTestMap(){
+	public void generateTestMap(){
 		//TEST ROOM CREATION//
 		Room entrance  = new Room();
 		entrance.setDescription("The entry foyer of Nico's Mom's home. \nBe sure to wipe your feet!");
@@ -59,6 +58,8 @@ public class GameWorld {
 		Item apple = new Item("apple", "an ordinary apple");
 		Item carrot = new Item("carrot", "an ordinary carrot");
 		Item cheese = new Item("chees", "the greatest object ever created");
+		Equipment sword = new Equipment("Iron Sword", "A masterwork Iron Sword... Still pretty weak though", 1, "weapon");
+		//entrance.addItem(sword);
 		entrance.addItem(apple);
 		entrance.addItem(carrot);
 		entrance.addItem(cheese);
