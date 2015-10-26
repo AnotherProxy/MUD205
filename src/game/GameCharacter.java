@@ -6,7 +6,8 @@ public class GameCharacter {
 	
 	private Equipment armor;
 	private Equipment weapon;
-	private Equipment amulet;
+	
+	private int armorClass;
 	
 	private int mHealth = 20; //max health
 	private int cHealth = 20;//current health
@@ -97,5 +98,45 @@ public class GameCharacter {
 
 	public void setcHealth(int cHealth) {
 		this.cHealth = cHealth;
+	}
+
+
+	public Equipment getArmor() {
+		return armor;
+	}
+
+
+	public void setArmor(Equipment armor) {
+		this.armor = armor;
+	}
+
+
+	public Equipment getWeapon() {
+		return weapon;
+	}
+
+
+	public void setWeapon(Equipment weapon) {
+		this.weapon = weapon;
+	}
+
+
+	public int getStrength() {
+		return strength;
+	}
+
+
+	public void setStrength(int strength) {
+		this.strength = strength;
+	}
+
+
+	public int getArmorClass() {
+		return armorClass;
+	}
+
+
+	public void setArmorClass(int armorClass) {
+		this.armorClass = armorClass;
 	}
 }
