@@ -70,6 +70,4 @@ public class GameEventHandler {
 			//System.out.println(c.getLocation().getDescription());
 		}
 	}
-	///MOVEMENT
-
 }

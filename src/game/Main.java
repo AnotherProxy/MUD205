@@ -25,6 +25,7 @@ public class Main {
 		
 		
 		
+		
 		while (true) {
 			player.getController().parseInput(input.nextLine(), tom, player);
 			//ui.print(input.next());
